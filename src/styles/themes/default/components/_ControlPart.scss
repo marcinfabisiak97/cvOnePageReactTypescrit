@@ -1,0 +1,33 @@
+.controlAndTechnolgies {
+    width: 100vw;
+    height: 50vh;
+
+    &__text {
+        width: 100vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            font-size: 300%;
+            width: 65vw;
+        }
+
+        h2 {
+            font-size: 500%;
+        }
+
+    }
+
+    &__technolgies {
+        display: flex;
+        justify-content: space-around;
+        align-items: space-around;
+        flex-wrap: wrap;
+        position: relative;
+
+
+    }
+}

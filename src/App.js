@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useState} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route } from'react-router';
+import Homepage from './pages/homepage';
+import { SlideContext} from "./context/Contexts";
+import './App.scss';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [ expander, setExpander] = useState('');
+    const [slideProject, setSlideproject] = useState(1);
+    return (
+        <div>
+     		
+     		<SlideContext.Provider value={{slideProject, setSlideproject, expander, setExpander}}>
+   				<Homepage/>
+   			</SlideContext.Provider>
+    		
+     	</div>
+    );
 }
 
 export default App;

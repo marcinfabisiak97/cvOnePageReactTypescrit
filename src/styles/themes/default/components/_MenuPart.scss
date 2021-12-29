@@ -1,0 +1,81 @@
+.namenMenu {
+    padding-left: $space-small;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+
+    &__name {
+        padding-left: $space-small;
+
+        h1 {
+            margin-top: $space-xxsmall;
+            font-size: $f-big;
+
+            span {
+                vertical-align: 40%;
+            }
+        }
+
+        p {
+            font-size: $f-middle;
+        }
+    }
+
+    &__menu {
+        padding-left: $space-small;
+        width: 100%;
+        top: 0;
+
+
+        &--buttonImgWrapper {
+            vertical-align: 10%;
+            padding-left: $space-xsmall;
+
+            img {
+                width: 25px;
+            }
+        }
+
+        button {
+
+            padding: $space-null;
+            font-size: $f-middle;
+            background: none;
+            text-decoration: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:focus+ul {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        ul {
+            margin-top: $space-null;
+            padding-left: $space-null;
+            font-size: $f-xsmall;
+
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            list-style: none;
+
+            transition: all 0.4s ease;
+
+            li {
+                padding-left: $space-null;
+            }
+
+            li:hover {
+                background-color: $c-blueBell;
+            }
+        }
+    }
+
+    &__menu1 {
+        position: fixed;
+        left: 0;
+    }
+}

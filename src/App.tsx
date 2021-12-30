@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Homepage from "./pages/homepage";
 import { SlideContext } from "./context/Contexts";
 import "./App.scss";
+
 function App() {
     const [expander, setExpander] = useState("");
-    const [slideProject, setSlideproject] = useState(1);
+    const [slideProject, setSlideproject] = useState<number>(1);
     return (
         <div>
             <SlideContext.Provider

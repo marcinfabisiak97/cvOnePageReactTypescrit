@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import rightPointer from "../../assets/icons/rightPointer.png";
 import { myTechnolgieExpand } from "../../context/technologyPartBackEnd/technologiesExpand";
 import { myTechnolgie } from "../../context/technologyPartBackEnd/technologies";
 import { SlideContext } from "../../context/Contexts";

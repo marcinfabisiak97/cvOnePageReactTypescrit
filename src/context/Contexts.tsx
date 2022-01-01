@@ -1,5 +1,13 @@
 import { createContext } from "react";
-export const SlideContext = createContext<number | string>({
-	slideProject: (item) => {},
-	expander: (item) => {},
+type ContextState = {
+	slideProject: number;
+	expander: string;
+	setSlideproject: (slideProject) => void;
+	setExpander: (expander) => void;
+};
+export const SlideContext = createContext<ContextState>({
+	slideProject: 1,
+	expander: "",
+	setSlideproject: () => {},
+	setExpander: () => {},
 });

@@ -5,7 +5,7 @@ import "./App.scss";
 
 function App() {
     const [expander, setExpander] = useState("");
-    const [slideProject, setSlideproject] = useState<number>(1);
+    const [slideProject, setSlideproject] = useState(1);
     return (
         <div>
             <SlideContext.Provider

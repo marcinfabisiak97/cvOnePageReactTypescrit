@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import dropDown from "../../assets/dropdown.png";
-import imgTextRight from "../../assets/text_left.png";
-
+import Image from "../../component/images";
+const imgTextRight = require("../../assets/text_left.png");
+const dropDown = require("../../assets/dropdown.png");
 const Menupart = ({ myPortfolio, myService, myPhone }) => {
     const NavItem = (props) => {
         const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
@@ -53,7 +53,7 @@ const Menupart = ({ myPortfolio, myService, myPhone }) => {
                         <button>
                             Menu
                             <span className="namenMenu__menu--buttonImgWrapper">
-                                <img src={dropDown} alt="dropdown arrow" />
+                                <Image imageUrl={dropDown} />
                             </span>
                         </button>
                         <ul>

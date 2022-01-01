@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
-import rightPointer from "../../../assets/icons/rightPointer.png";
 import { myTechnolgieExpand } from "../../../context/technologyPartBackEnd/technologiesExpand";
-
 import { SlideContext } from "../../../context/Contexts";
+const rightPointer = require("../../../assets/icons/rightPointer.png");
 const TechnolgieExpand = (props) => {
     const { expander, setExpander } = useContext(SlideContext);
     return (

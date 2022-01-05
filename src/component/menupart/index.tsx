@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
-
+import React, { FC, useState, useEffect } from "react";
+import { TypeProps } from "../../types";
+import NavItem from "../../component/navitem";
 const imgTextRight = require("../../assets/text_left.png");
 const dropDown = require("../../assets/dropdown.png");
-const Menupart = ({ myPortfolio, myService, myPhone }) => {
-    const NavItem = (props) => {
-        const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
-        return (
-            <li onClick={() => scrollToRef(props.linker)}>
-                <p>{props.name}</p>
-            </li>
-        );
-    };
+
+const Menupart: FC<TypeProps> = ({ myPortfolio, myService, myPhone }) => {
     const navMenu = [
         { name: "My Portfolio", linker: myPortfolio },
         { name: "Service", linker: myService },

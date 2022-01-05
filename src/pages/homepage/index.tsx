@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import Menupart from "../../component/menupart";
 import Ideaspart from "../../component/ideaspart";
 import Phonepart from "../../component/phonepart";
 import Controlpart from "../../component/controlpart";
 import Projectspart from "../../component/myprojectspart";
-import { useRef } from "react";
 
 const Homepage = () => {
-	const myPortfolio = useRef<HTMLDivElement | string | null | object>(null);
-	const myService = useRef<HTMLDivElement | string | null | object>(null);
-	const myPhone = useRef<HTMLDivElement | string | null | object>(null);
+	const myPortfolio = useRef<HTMLDivElement>(null);
+	const myService = useRef<HTMLDivElement>(null);
+	const myPhone = useRef<HTMLDivElement>(null);
 	return (
 		<div>
 			<Menupart {...{ myPortfolio, myService, myPhone }} />

@@ -1,8 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { FC, useState, useContext } from "react";
+import { TypeProps } from "../../types";
 import Slider from "../../component/Slider/Slider";
 import { SlideContext } from "../../context/Contexts";
 import dataSlider from "../Slider/dataSlider";
-const Phonepart = ({ myPortfolio, myService, myPhone }) => {
+const Phonepart: FC<TypeProps> = ({ myPortfolio, myService, myPhone }) => {
     const { slideProject, setSlideproject } = useContext(SlideContext);
     return (
         <React.Fragment>

@@ -1,10 +1,6 @@
-import React, { FC } from "react";
-type IdeasProps = {
-    myPortfolio: HTMLDivElement | string | null | object;
-    myService: HTMLDivElement | string | null | object;
-    myPhone: HTMLDivElement | string | null | object;
-};
-const Ideaspart: FC<IdeasProps> = ({ myPortfolio, myService, myPhone }) => {
+import React, { FC, RefObject } from "react";
+import { TypeProps } from "../../types";
+const Ideaspart: FC<TypeProps> = ({ myPortfolio, myService, myPhone }) => {
     const myServices: Array<string> = [
         "UX/UI",
         "Websites",

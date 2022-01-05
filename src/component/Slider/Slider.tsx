@@ -41,8 +41,8 @@ const Slider = () => {
                         onClick={() => moveDot(index + 1)}
                         className={
                             slideProject === index + 1
-                                ? "dotsAndSlider__Dots--dot dotsAndSlider__Dots--dotActive"
-                                : "dotsAndSlider__Dots--dot"
+                                ? "dotsAndSlider__dot dotsAndSlider__dot--active"
+                                : "dotsAndSlider__dot"
                         }
                     ></div>
                 ))}
@@ -53,8 +53,8 @@ const Slider = () => {
                         key={index}
                         className={
                             slideIndex === index + 1
-                                ? "dotsAndSlider__slides--slide dotsAndSlider__slides--activeSlide"
-                                : "dotsAndSlider__slides--slide"
+                                ? "dotsAndSlider__slide dotsAndSlider__slide--active"
+                                : "dotsAndSlider__slide"
                         }
                     >
                         <Switcher obj={obj} />

@@ -1,9 +1,16 @@
-import React from "react";
-const Ideaspart = ({ myPortfolio, myService, myPhone }) => {
-    const Services = ({ services }) => {
-        return <div>{services}</div>;
-    };
-    const myServices = ["UX/UI", "Websites", "Applications", "Software"];
+import React, { FC } from "react";
+type IdeasProps = {
+    myPortfolio: HTMLDivElement | string | null | object;
+    myService: HTMLDivElement | string | null | object;
+    myPhone: HTMLDivElement | string | null | object;
+};
+const Ideaspart: FC<IdeasProps> = ({ myPortfolio, myService, myPhone }) => {
+    const myServices: Array<string> = [
+        "UX/UI",
+        "Websites",
+        "Applications",
+        "Software",
+    ];
     return (
         <React.Fragment>
             <div className="ideasPart" ref={myService}>
@@ -13,9 +20,9 @@ const Ideaspart = ({ myPortfolio, myService, myPhone }) => {
                 </p>
                 <p className="ideasPart__text">to make your ideas evolve</p>
                 <div className="ideasPart__downBoxes">
-                    {myServices.map((el, index) => {
-                        return <Services key={index} services={el} />;
-                    })}
+                    {myServices.map((el, index) => (
+                        <div key={index}>{el}</div>
+                    ))}
                 </div>
             </div>
         </React.Fragment>

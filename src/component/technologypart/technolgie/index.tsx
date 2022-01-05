@@ -7,20 +7,37 @@ const Technolgie = (props) => {
     const { expander, setExpander } = useContext(SlideContext);
     return (
         <React.Fragment>
-            <div className="technolgiesBricks">
-                <img src={props.photo} alt="ui" />
-                <div className="technolgiesBricks__midleText">
-                    <p>{props.number}</p>
-                    <h3>{props.kind}</h3>
-                    <p>{props.text} </p>
+            {expander ? (
+                <div className="technolgiesBricksExpand">
+                    <img src={props.photo} alt="ui" />
+                    <div className="technolgiesBricksExpand__midleText">
+                        <p>{props.number}</p>
+                        <h3>{props.kind}</h3>
+                        <p>{props.text} </p>
+                    </div>
+                    <img
+                        className="technolgiesBricksExpand__cliker"
+                        onClick={() => setExpander("")}
+                        src={rightPointer}
+                        alt="pointer"
+                    />
                 </div>
-                <img
-                    className="technolgiesBricks__image"
-                    onClick={() => setExpander(props.number)}
-                    src={rightPointer}
-                    alt="pointer"
-                />
-            </div>
+            ) : (
+                <div className="technolgiesBricks">
+                    <img src={props.photo} alt="ui" />
+                    <div className="technolgiesBricks__midleText">
+                        <p>{props.number}</p>
+                        <h3>{props.kind}</h3>
+                        <p>{props.text} </p>
+                    </div>
+                    <img
+                        className="technolgiesBricks__image"
+                        onClick={() => setExpander(props.number)}
+                        src={rightPointer}
+                        alt="pointer"
+                    />
+                </div>
+            )}
         </React.Fragment>
     );
 };

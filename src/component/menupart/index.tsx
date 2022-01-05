@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Image from "../../component/images";
+
 const imgTextRight = require("../../assets/text_left.png");
 const dropDown = require("../../assets/dropdown.png");
 const Menupart = ({ myPortfolio, myService, myPhone }) => {
@@ -46,14 +46,14 @@ const Menupart = ({ myPortfolio, myService, myPhone }) => {
                     <div
                         className={
                             scrolled
-                                ? "namenMenu__menu1 namenMenu__menu"
+                                ? "namenMenu__menu--scrolled namenMenu__menu"
                                 : "namenMenu__menu"
                         }
                     >
                         <button>
                             Menu
                             <span className="namenMenu__menu--buttonImgWrapper">
-                                <Image imageUrl={dropDown} />
+                                <img src={dropDown} alt="dropdown arrow" />
                             </span>
                         </button>
                         <ul>

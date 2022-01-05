@@ -3,7 +3,7 @@ import { myTechnolgieExpand } from "../../context/technologyPartBackEnd/technolo
 import { myTechnolgie } from "../../context/technologyPartBackEnd/technologies";
 import { SlideContext } from "../../context/Contexts";
 import Technolgie from "../technologypart/technolgie";
-import TechnolgieExpand from "../technologypart/technolgieExpand";
+
 const Controlpart = () => {
     const { expander, setExpander } = useContext(SlideContext);
     return (
@@ -30,7 +30,7 @@ const Controlpart = () => {
                         : myTechnolgieExpand
                               .filter((el) => el.number.slice() === expander)
                               .map((el, index) => (
-                                  <TechnolgieExpand
+                                  <Technolgie
                                       key={index}
                                       photo={el.photo}
                                       number={el.number}

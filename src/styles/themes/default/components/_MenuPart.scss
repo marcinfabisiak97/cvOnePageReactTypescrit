@@ -25,8 +25,10 @@
         padding-left: $space-small;
         width: 100%;
         top: 0;
-
-
+        &--scrolled {
+            position: fixed;
+            left: 0;
+        }
         &--buttonImgWrapper {
             vertical-align: 10%;
             padding-left: $space-xsmall;
@@ -37,7 +39,6 @@
         }
 
         button {
-
             padding: $space-null;
             font-size: $f-middle;
             background: none;
@@ -47,7 +48,7 @@
             cursor: pointer;
         }
 
-        button:focus+ul {
+        button:focus + ul {
             opacity: 1;
             pointer-events: all;
         }
@@ -75,7 +76,5 @@
     }
 
     &__menu1 {
-        position: fixed;
-        left: 0;
     }
 }

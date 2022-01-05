@@ -1,6 +1,5 @@
 .controlAndTechnolgies {
     width: 100vw;
-    height: 50vh;
 
     &__text {
         width: 100vw;
@@ -18,7 +17,6 @@
         h2 {
             font-size: 500%;
         }
-
     }
 
     &__technolgies {
@@ -27,7 +25,5 @@
         align-items: space-around;
         flex-wrap: wrap;
         position: relative;
-
-
     }
 }

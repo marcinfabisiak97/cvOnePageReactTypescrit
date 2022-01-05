@@ -22,10 +22,18 @@
             background: $c-seashell;
         }
         &--dotActive {
-                background: $c-mineShaft;
-            }
+            background: $c-mineShaft;
+        }
     }
-
+    &__slideNumber {
+        padding: $space-null $space-xxsmall;
+        max-width: 5vw;
+        top: 93%;
+        left: 130px;
+        position: absolute;
+        color: white;
+        border: 1px solid white;
+    }
     &__slides {
         border-radius: $space-xsmall;
         min-width: $size-xxbig;
@@ -53,16 +61,6 @@
             opacity: 1;
         }
 
-        &--slideNumber {
-            padding: $space-null $space-xxsmall;
-            max-width: 5vw;
-            top: 93%;
-            left: 130px;
-            position: absolute;
-            color: white;
-            border: 1px solid white;
-        }
-
         .slider__button {
             width: $size-xmedium;
             height: $size-xmedium;
@@ -81,13 +79,12 @@
             }
 
             &--prev {
-                left: $space-medium; 
+                left: $space-medium;
             }
 
             &--next {
                 right: $space-medium;
             }
         }
-
     }
 }

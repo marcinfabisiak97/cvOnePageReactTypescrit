@@ -1,15 +1,15 @@
 import React from "react";
 import dataSlider from "../../Slider/dataSlider";
 
-const Modal = ({ setOpenModal }) => {
+const Modal1 = ({ setOpenModal1 }) => {
 	return (
 		<div className="modalBackground">
 			<div className="modalContainer">
-				<img src={dataSlider[0].adres} />
+				<img src={dataSlider[1].adres} />
 				<div className="modalContainer__CloseBtn">
 					<button
 						onClick={() => {
-							setOpenModal(0);
+							setOpenModal1(1);
 						}}
 					>
 						X
@@ -20,4 +20,4 @@ const Modal = ({ setOpenModal }) => {
 	);
 };
 
-export default Modal;
+export default Modal1;

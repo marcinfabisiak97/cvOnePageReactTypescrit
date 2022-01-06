@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import dataSlider from "../Slider/dataSlider";
 import Modal from "../myprojectspart/modal";
+import Modal1 from "../myprojectspart/modal1";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const myProjects = [
-    { source: dataSlider[0].adres, descr: "See more" },
-    { source: dataSlider[1].adres, descr: "See more" },
+    { source: dataSlider[0].adres, descr: "See more", setOpen: 1 },
+    { source: dataSlider[1].adres, descr: "See more", setOpen: 2 },
 ];
 const Project = (props) => {
-    const [modalOpen, setModalOpen] = useState(false);
-
+    const [modalOpen, setModalOpen] = useState(0);
+    const [modalOpen1, setModalOpen1] = useState(1);
     return (
         <div>
             <div className="firstproject">
@@ -23,16 +24,19 @@ const Project = (props) => {
                     className="projects__image"
                     alt="rightPointer"
                     onClick={() => {
-                        setModalOpen(true);
+                        setModalOpen(props.setOpen);
+                        setModalOpen1(props.setOpen);
                     }}
                 />
             </div>
-            {modalOpen && <Modal setOpenModal={setModalOpen} />}
+            {modalOpen == 1 && <Modal setOpenModal={setModalOpen} />}
+            {modalOpen1 == 2 && <Modal1 setOpenModal1={setModalOpen1} />}
         </div>
     );
 };
 const Projectspart = () => {
     const [modalOpen, setModalOpen] = useState(false);
+
     return (
         <div className="projects">
             <div className="projects__title">My projects</div>
@@ -46,11 +50,15 @@ const Projectspart = () => {
                         setModalOpen(true);
                     }}
                 />
-                {modalOpen && <Modal setOpenModal={setModalOpen} />}
             </div>
             {myProjects.map((el, index) => {
                 return (
-                    <Project key={index} source={el.source} descr={el.descr} />
+                    <Project
+                        key={index}
+                        source={el.source}
+                        descr={el.descr}
+                        setOpen={el.setOpen}
+                    />
                 );
             })}
         </div>

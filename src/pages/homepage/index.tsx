@@ -4,7 +4,7 @@ import Ideaspart from "../../component/ideaspart";
 import Phonepart from "../../component/phonepart";
 import Controlpart from "../../component/controlpart";
 import Projectspart from "../../component/myprojectspart";
-
+import Devtech from "../../component/devtechgnologypart";
 const Homepage = () => {
 	const myPortfolio = useRef<HTMLDivElement>(null);
 	const myService = useRef<HTMLDivElement>(null);
@@ -16,6 +16,7 @@ const Homepage = () => {
 			<Phonepart {...{ myPortfolio, myService, myPhone }} />
 			<Controlpart />
 			<Projectspart />
+			<Devtech />
 		</div>
 	);
 };

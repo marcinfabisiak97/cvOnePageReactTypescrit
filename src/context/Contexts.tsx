@@ -11,22 +11,6 @@ export const SlideContext = createContext<ContextState>({
 	setSlideproject: () => {},
 	setExpander: () => {},
 });
-// export const TechnologieContext = createContext({
-// 	TechComp: Technolgie,
-// });
-// export const TechnologieExpandContext = ({ children }) => {
-// 	const TechComp = TechnolgieExpand;
-
-// 	return (
-// 		<TechnologieContext.Provider
-// 			value={{
-// 				TechnolgieExpand,
-// 			}}
-// 		>
-// 			{children}
-// 		</TechnologieContext.Provider>
-// 	);
-// };
 
 type ModalState = {
 	modalOpen: boolean;

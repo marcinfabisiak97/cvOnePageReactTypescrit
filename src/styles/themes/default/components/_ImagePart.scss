@@ -1,0 +1,21 @@
+.imagePart {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url(../../../../assets/pic_upper.png), url(../../../../assets/lines_upper.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-bottom: 4px solid rgba(137, 196, 244, 1);
+
+    &__imgRight {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}

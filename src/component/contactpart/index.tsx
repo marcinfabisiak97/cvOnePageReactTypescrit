@@ -1,26 +1,33 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, FC, RefObject } from "react";
+import Ini from "../../component/initialsMF";
+import { NavLink } from "react-router-dom";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const leftQuote = require("../../assets/leftQuote.png");
 const rightQuote = require("../../assets/rightQuote.png");
-const dot = require("../../assets/dot.png");
 const facebook = require("../../assets/facebook_icon.png");
 const linkedin = require("../../assets/linkedin_icon.png");
-
+const delay = 4000;
 const opinion = [
   "Creating such a unique and effective solution for our company, which allowed to reduce production cost thanks to new software and in such a short time is a real challenge and success.",
   "Martin did an awesome job, exceeding my expectations on both the quality and quantity of his work. Great communication skills and ability to stick to a tight deadline. I will surely hire him again in the future for more projects.",
   "It was great to work with Martin. I will work with him again for sure in the near future. He communicates well and makes himself available to answer questions and helps above and beyond what is expected of him.",
 ];
-const delay = 4000;
-const Contact = () => {
+
+const Contact = ({
+  myPortfolio,
+  myService,
+  myAwards,
+  myProjecty,
+  myContacty,
+}) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
-  function resetTimeout() {
+  const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-  }
+  };
 
   useEffect(() => {
     resetTimeout();
@@ -68,12 +75,9 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="footer">
+      <div className="footer" ref={myContacty}>
         <div className="footer__initials">
-          <h2>
-            <img src={dot} alt="dot" />
-            M<img src={dot} alt="dot" />F
-          </h2>
+          <Ini />
           <p>Marcin Fabisiak 2022</p>
           <p>All rights reserved.</p>
         </div>
@@ -90,16 +94,20 @@ const Contact = () => {
         </div>
 
         <div className="footer__links">
-          <img
-            className="footer__links--bigger"
-            src={facebook}
-            alt="facebook"
-          />
-          <img
-            className="footer__links--bigger"
-            src={linkedin}
-            alt="linkedin"
-          />
+          <NavLink target="blank" to="/Facebook">
+            <img
+              className="footer__links--bigger"
+              src={facebook}
+              alt="facebook"
+            />
+          </NavLink>
+          <NavLink target="blank" to="/Linkedin">
+            <img
+              className="footer__links--bigger"
+              src={linkedin}
+              alt="linkedin"
+            />
+          </NavLink>
         </div>
       </div>
     </div>

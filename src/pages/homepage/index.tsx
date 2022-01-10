@@ -9,16 +9,30 @@ import Contact from "../../component/contactpart";
 const Homepage = () => {
   const myPortfolio = useRef<HTMLDivElement>(null);
   const myService = useRef<HTMLDivElement>(null);
-  const myPhone = useRef<HTMLDivElement>(null);
+  const myAwards = useRef<HTMLDivElement>(null);
+  const myProjecty = useRef<HTMLDivElement>(null);
+  const myContacty = useRef<HTMLDivElement>(null);
   return (
     <div>
-      <Menupart {...{ myPortfolio, myService, myPhone }} />
-      <Ideaspart {...{ myPortfolio, myService, myPhone }} />
-      <Phonepart {...{ myPortfolio, myService, myPhone }} />
-      <Controlpart />
-      <Projectspart />
+      <Menupart
+        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
+      />
+      <Ideaspart
+        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
+      />
+      <Phonepart
+        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
+      />
+      <Controlpart
+        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
+      />
+      <Projectspart
+        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
+      />
       <Devtech />
-      <Contact />
+      <Contact
+        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
+      />
     </div>
   );
 };

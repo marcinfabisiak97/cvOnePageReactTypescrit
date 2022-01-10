@@ -1,6 +1,8 @@
 import React, { FC, RefObject } from "react";
 export interface TypeProps {
-	myPortfolio: RefObject<HTMLDivElement> | null;
-	myService: RefObject<HTMLDivElement> | null;
-	myPhone: RefObject<HTMLDivElement> | null;
+  myPortfolio: RefObject<HTMLDivElement> | null;
+  myService: RefObject<HTMLDivElement> | null;
+  myAwards: RefObject<HTMLDivElement> | null;
+  myProjecty: RefObject<HTMLDivElement> | null;
+  myContacty: RefObject<HTMLDivElement> | null;
 }

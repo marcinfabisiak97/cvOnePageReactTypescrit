@@ -1,20 +1,23 @@
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/homepage";
 import { SlideContext } from "./context/Contexts";
 import "./App.scss";
 
 function App() {
-    const [expander, setExpander] = useState("");
-    const [slideProject, setSlideproject] = useState(1);
-    return (
-        <div>
-            <SlideContext.Provider
-                value={{ slideProject, setSlideproject, expander, setExpander }}
-            >
-                <Homepage />
-            </SlideContext.Provider>
-        </div>
-    );
+  const [expander, setExpander] = useState("");
+  const [slideProject, setSlideproject] = useState(1);
+  return (
+    <SlideContext.Provider
+      value={{ slideProject, setSlideproject, expander, setExpander }}
+    >
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/Facebook" element={<Homepage />} />
+        <Route path="/Linkedin" element={<Homepage />} />
+      </Routes>
+    </SlideContext.Provider>
+  );
 }
 
 export default App;

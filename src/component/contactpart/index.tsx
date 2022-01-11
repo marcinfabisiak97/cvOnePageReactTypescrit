@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, FC, RefObject } from "react";
 import Ini from "../../component/initialsMF";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, Route } from "react-router-dom";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const leftQuote = require("../../assets/leftQuote.png");
 const rightQuote = require("../../assets/rightQuote.png");
@@ -20,6 +20,12 @@ const Contact = ({
   myProjecty,
   myContacty,
 }) => {
+  const myFootNav = [
+    { link: myPortfolio, title: "Porfolio" },
+    { link: myService, title: "Service" },
+    { link: myAwards, title: "Awards" },
+    { link: myProjecty, title: "Technology" },
+  ];
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -43,7 +49,7 @@ const Contact = ({
       resetTimeout();
     };
   }, [index]);
-
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
   return (
     <div className="contactPart">
       <h3 className="contactPart__title">Clients'</h3>
@@ -52,7 +58,7 @@ const Contact = ({
       <div className="slideShow">
         <div
           className="slideShow__Slider"
-          style={{ transform: `translate3d(${-index * 28}%, 0, 0)` }}
+          style={{ transform: `translate3d(${-index * 34}%, 0, 0)` }}
         >
           {opinion.map((el, index) => (
             <div className="slideShow__slide" key={index}>
@@ -82,14 +88,19 @@ const Contact = ({
           <p>All rights reserved.</p>
         </div>
         <div className="footer__nav">
-          <p>Portfolio</p>
-          <p>Service</p>
-          <p>Awards</p>
-          <p>Technology</p>
+          {myFootNav.map((el, index) => {
+            return <p onClick={() => scrollToRef(el.link)}>{el.title}</p>;
+          })}
         </div>
         <div className="footer__terms">
           <p>Contact me</p>
-          <p>Privacy</p>
+          <a
+            href="https://policies.google.com/privacy?hl=en-US"
+            target="_blank"
+          >
+            <p>Privacy</p>
+          </a>
+
           <p>Terms & Condtions</p>
         </div>
 

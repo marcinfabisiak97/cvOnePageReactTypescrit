@@ -1,12 +1,11 @@
-html{
-	scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
-
-	overflow: auto;
-    background-image: url('../assets/TLO.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: rgb(255, 255, 255);
-   
+  overflow: auto;
+  background-image: url("../assets/TLO.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(255, 255, 255);
 }

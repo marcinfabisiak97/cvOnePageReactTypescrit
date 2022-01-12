@@ -6,6 +6,7 @@ import Controlpart from "../../component/controlpart";
 import Projectspart from "../../component/myprojectspart";
 import Devtech from "../../component/devtechgnologypart";
 import Contact from "../../component/contactpart";
+
 const Homepage = () => {
   const myPortfolio = useRef<HTMLDivElement>(null);
   const myService = useRef<HTMLDivElement>(null);

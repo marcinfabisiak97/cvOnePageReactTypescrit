@@ -1,6 +1,16 @@
-import React, { useState, useRef, useEffect, FC, RefObject } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  FC,
+  useContext,
+  RefObject,
+} from "react";
 import Ini from "../../component/initialsMF";
 import { Link, NavLink, Route } from "react-router-dom";
+import { TypeProps } from "../../types";
+import ContactUsForm from "../../component/contactform";
+import { SlideContext } from "../../context/Contexts";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const leftQuote = require("../../assets/leftQuote.png");
 const rightQuote = require("../../assets/rightQuote.png");
@@ -13,7 +23,7 @@ const opinion = [
   "It was great to work with Martin. I will work with him again for sure in the near future. He communicates well and makes himself available to answer questions and helps above and beyond what is expected of him.",
 ];
 
-const Contact = ({
+const Contact: FC<TypeProps> = ({
   myPortfolio,
   myService,
   myAwards,
@@ -26,6 +36,7 @@ const Contact = ({
     { link: myAwards, title: "Awards" },
     { link: myProjecty, title: "Technology" },
   ];
+  const [show, setShow] = useState<boolean>(false);
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -74,12 +85,13 @@ const Contact = ({
           ))}
         </div>
       </div>
-      <div className="contact">
+      <div className="contact" onClick={() => setShow(true)}>
         <p className="contact__btn">
           Contact me
           <img className="contact__cliker" src={rightPointer} alt="pointer" />
         </p>
       </div>
+      {show && <ContactUsForm setShow={setShow} />}
 
       <div className="footer" ref={myContacty}>
         <div className="footer__initials">

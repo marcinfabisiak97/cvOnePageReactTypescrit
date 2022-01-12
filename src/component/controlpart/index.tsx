@@ -1,10 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { FC, useState, useContext } from "react";
+import { TypeProps } from "../../types";
 import { myTechnolgieExpand } from "../../context/technologyPartBackEnd/technologiesExpand";
 import { myTechnolgie } from "../../context/technologyPartBackEnd/technologies";
 import { SlideContext } from "../../context/Contexts";
 import Technolgie from "../technologypart/technolgie";
 
-const Controlpart = ({ myPortfolio, myService, myAwards, myProjecty }) => {
+const Controlpart: FC<TypeProps> = ({
+  myPortfolio,
+  myService,
+  myAwards,
+  myProjecty,
+}) => {
   const { expander, setExpander } = useContext(SlideContext);
   return (
     <React.Fragment>

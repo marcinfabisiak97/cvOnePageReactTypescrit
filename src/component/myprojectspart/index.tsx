@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
+import { TypeProps } from "../../types";
 import dataSlider from "../Slider/dataSlider";
 import Modal from "../myprojectspart/modal";
 import Modal1 from "../myprojectspart/modal1";
@@ -34,7 +35,12 @@ const Project = (props) => {
     </div>
   );
 };
-const Projectspart = ({ myPortfolio, myService, myAwards, myProjecty }) => {
+const Projectspart: FC<TypeProps> = ({
+  myPortfolio,
+  myService,
+  myAwards,
+  myProjecty,
+}) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (

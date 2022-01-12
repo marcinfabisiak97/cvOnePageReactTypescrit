@@ -8,6 +8,7 @@ const typescript = require("../../assets/devtech/typescript.png");
 const redux = require("../../assets/devtech/redux.png");
 const bitbucket = require("../../assets/devtech/bitbucket.png");
 const sourcetree = require("../../assets/devtech/sourcetree.png");
+
 const Devtech = () => {
   const myDevTechs = [
     { source: html5, title: "html5" },

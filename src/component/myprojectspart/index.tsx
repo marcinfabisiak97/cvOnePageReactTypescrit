@@ -41,8 +41,7 @@ const Projectspart: FC<TypeProps> = ({
   myAwards,
   myProjecty,
 }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-
+  const [allModalOpen, setAllModalOpen] = useState(false);
   return (
     <div className="projects" ref={myProjecty}>
       <div className="projects__title">My projects</div>
@@ -53,20 +52,23 @@ const Projectspart: FC<TypeProps> = ({
           className="projects__image"
           alt="rightPointer"
           onClick={() => {
-            setModalOpen(true);
+            setAllModalOpen(true);
           }}
         />
       </div>
-      {myProjects.map((el, index) => {
-        return (
-          <Project
-            key={index}
-            source={el.source}
-            descr={el.descr}
-            setOpen={el.setOpen}
-          />
-        );
-      })}
+
+      {allModalOpen &&
+        myProjects.map((el, index) => {
+          return (
+            <Project
+              key={index}
+              source={el.source}
+              descr={el.descr}
+              setOpen={el.setOpen}
+            />
+          );
+        })}
+      <button onClick={() => setAllModalOpen(false)}>Close Modal</button>
     </div>
   );
 };

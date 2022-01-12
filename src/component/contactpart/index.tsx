@@ -9,7 +9,7 @@ import React, {
 import Ini from "../../component/initialsMF";
 import { Link, NavLink, Route } from "react-router-dom";
 import { TypeProps } from "../../types";
-import ContactUsForm from "../../component/contactform";
+
 import { SlideContext } from "../../context/Contexts";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const leftQuote = require("../../assets/leftQuote.png");
@@ -36,10 +36,10 @@ const Contact: FC<TypeProps> = ({
     { link: myAwards, title: "Awards" },
     { link: myProjecty, title: "Technology" },
   ];
-  const [show, setShow] = useState<boolean>(false);
+
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
-
+  const { show, setShow } = useContext(SlideContext);
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -85,13 +85,12 @@ const Contact: FC<TypeProps> = ({
           ))}
         </div>
       </div>
-      <div className="contact" onClick={() => setShow(true)}>
+      <div className="contact" onClick={() => setShow(false)}>
         <p className="contact__btn">
           Contact me
           <img className="contact__cliker" src={rightPointer} alt="pointer" />
         </p>
       </div>
-      {show && <ContactUsForm setShow={setShow} />}
 
       <div className="footer" ref={myContacty}>
         <div className="footer__initials">

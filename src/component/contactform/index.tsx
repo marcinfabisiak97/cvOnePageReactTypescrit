@@ -16,7 +16,7 @@ interface IFormInput {
   gender: GenderEnum;
 }
 
-const ContactUsForm = ({ setShow }) => {
+const ContactUsForm = () => {
   const {
     register,
     handleSubmit,
@@ -25,10 +25,11 @@ const ContactUsForm = ({ setShow }) => {
   } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
   console.log(watch("lastName"));
+  const { show, setShow } = useContext(SlideContext);
   const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
-      <button onClick={() => setShow(false)}>X</button>
+      <button onClick={() => setShow(true)}>X</button>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <label>First Name</label>
         <input

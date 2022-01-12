@@ -7,7 +7,7 @@ import "./App.scss";
 function App() {
   const [expander, setExpander] = useState("");
   const [slideProject, setSlideproject] = useState(1);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   return (
     <SlideContext.Provider
       value={{

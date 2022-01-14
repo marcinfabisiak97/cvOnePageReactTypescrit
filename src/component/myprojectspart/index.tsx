@@ -43,17 +43,31 @@ const Projectspart: FC = () => {
   return (
     <div className="projects" ref={myProjecty}>
       <div className="projects__title">My projects</div>
-      <div className="projects__btnSee">
-        <h3 className="projects__description">See all projects</h3>
-        <img
-          src={rightPointer}
-          className="projects__image"
-          alt="rightPointer"
-          onClick={() => {
-            setAllModalOpen(true);
-          }}
-        />
-      </div>
+      {allModalOpen ? (
+        <div className="projects__btnSee">
+          <h3 className="projects__description">Close all projects</h3>
+          <img
+            src={rightPointer}
+            className="projects__image"
+            alt="rightPointer"
+            onClick={() => {
+              setAllModalOpen(false);
+            }}
+          />
+        </div>
+      ) : (
+        <div className="projects__btnSee">
+          <h3 className="projects__description">See all projects</h3>
+          <img
+            src={rightPointer}
+            className="projects__image"
+            alt="rightPointer"
+            onClick={() => {
+              setAllModalOpen(true);
+            }}
+          />
+        </div>
+      )}
 
       {allModalOpen &&
         myProjects.map((el, index) => {
@@ -66,7 +80,6 @@ const Projectspart: FC = () => {
             />
           );
         })}
-      <button onClick={() => setAllModalOpen(false)}>Close Modal</button>
     </div>
   );
 };

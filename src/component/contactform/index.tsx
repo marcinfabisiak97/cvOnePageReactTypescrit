@@ -24,7 +24,6 @@ const ContactUsForm = () => {
     watch,
   } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
-  console.log(watch("lastName"));
   const { show, setShow } = useContext(SlideContext);
   const [startDate, setStartDate] = useState(new Date());
   return (

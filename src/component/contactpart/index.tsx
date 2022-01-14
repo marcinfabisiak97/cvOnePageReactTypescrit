@@ -23,13 +23,9 @@ const opinion = [
   "It was great to work with Martin. I will work with him again for sure in the near future. He communicates well and makes himself available to answer questions and helps above and beyond what is expected of him.",
 ];
 
-const Contact: FC<TypeProps> = ({
-  myPortfolio,
-  myService,
-  myAwards,
-  myProjecty,
-  myContacty,
-}) => {
+const Contact: FC = () => {
+  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
+    useContext(SlideContext);
   const myFootNav = [
     { link: myPortfolio, title: "Porfolio" },
     { link: myService, title: "Service" },

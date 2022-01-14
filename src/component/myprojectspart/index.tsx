@@ -1,8 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useContext } from "react";
 import { TypeProps } from "../../types";
 import dataSlider from "../Slider/dataSlider";
 import Modal from "../myprojectspart/modal";
 import Modal1 from "../myprojectspart/modal1";
+import { SlideContext } from "../../context/Contexts";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const myProjects = [
   { source: dataSlider[0].adres, descr: "See more", setOpen: 1 },
@@ -35,12 +36,9 @@ const Project = (props) => {
     </div>
   );
 };
-const Projectspart: FC<TypeProps> = ({
-  myPortfolio,
-  myService,
-  myAwards,
-  myProjecty,
-}) => {
+const Projectspart: FC = () => {
+  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
+    useContext(SlideContext);
   const [allModalOpen, setAllModalOpen] = useState(false);
   return (
     <div className="projects" ref={myProjecty}>

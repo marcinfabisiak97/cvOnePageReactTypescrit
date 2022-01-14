@@ -10,34 +10,18 @@ import { SlideContext } from "../../context/Contexts";
 import ContactUsForm from "../../component/contactform";
 const Homepage = () => {
   const { show, setShow } = useContext(SlideContext);
-  const myPortfolio = useRef<HTMLDivElement>(null);
-  const myService = useRef<HTMLDivElement>(null);
-  const myAwards = useRef<HTMLDivElement>(null);
-  const myProjecty = useRef<HTMLDivElement>(null);
-  const myContacty = useRef<HTMLDivElement>(null);
+
   return (
     <div>
-      <Menupart
-        {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
-      />
+      <Menupart />
       {show ? (
         <div>
-          <Ideaspart
-            {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
-          />
-          <Phonepart
-            {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
-          />
-          <Controlpart
-            {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
-          />
-          <Projectspart
-            {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
-          />
+          <Ideaspart />
+          <Phonepart />
+          <Controlpart />
+          <Projectspart />
           <Devtech />
-          <Contact
-            {...{ myPortfolio, myService, myAwards, myProjecty, myContacty }}
-          />
+          <Contact />
         </div>
       ) : (
         <ContactUsForm />

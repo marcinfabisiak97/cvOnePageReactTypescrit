@@ -1,4 +1,8 @@
 import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../state";
+import { RootState } from "../../state/reducers";
 const html5 = require("../../assets/devtech/html.png");
 const javascript = require("../../assets/devtech/javascript.png");
 const css = require("../../assets/devtech/css.png");
@@ -21,7 +25,12 @@ const Devtech = () => {
     { source: bitbucket, title: "bitbucket" },
     { source: sourcetree, title: "sourcetree" },
   ];
+  const devtechshow = useSelector(
+    (devtechshow: RootState) => devtechshow.devtech
+  );
+  const dispatch = useDispatch();
 
+  const { show, hide } = bindActionCreators(actionCreators, dispatch);
   return (
     <div className="devTech">
       <h2 className="devTech__title">Technology by all means</h2>
@@ -34,18 +43,23 @@ const Devtech = () => {
       <p className="devTech__description">
         We can prognose the results and test efficancy of the methods used.
       </p>
-      <div className="techBricks">
-        {myDevTechs.map((el, index) => {
-          return (
-            <div>
-              <div className="techBricks__brick">
-                <img src={el.source} className="techBricks__brick--image" />
+      <button onClick={() => show()}>show</button>
+
+      {devtechshow && (
+        <div className="techBricks">
+          {myDevTechs.map((el, index) => {
+            return (
+              <div>
+                <div className="techBricks__brick">
+                  <img src={el.source} className="techBricks__brick--image" />
+                </div>
+                <p className="techBricks__title">{el.title}</p>
               </div>
-              <p className="techBricks__title">{el.title}</p>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+          <button onClick={() => hide()}>hide</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -27,7 +27,7 @@ const ContactUsForm = () => {
   const { show, setShow } = useContext(SlideContext);
   const [startDate, setStartDate] = useState(new Date());
   return (
-    <div>
+    <div className="containerForm">
       <button onClick={() => setShow(true)}>X</button>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <label>First Name</label>
@@ -63,7 +63,7 @@ const ContactUsForm = () => {
           <option value="female">female</option>
           <option value="male">male</option>
         </select>
-        <input type="submit" />
+        <input className="form__submit" type="submit" />
       </form>
     </div>
   );

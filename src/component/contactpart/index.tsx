@@ -1,6 +1,16 @@
-import React, { useState, useRef, useEffect, FC, RefObject } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  FC,
+  useContext,
+  RefObject,
+} from "react";
 import Ini from "../../component/initialsMF";
 import { Link, NavLink, Route } from "react-router-dom";
+import { TypeProps } from "../../types";
+
+import { SlideContext } from "../../context/Contexts";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const leftQuote = require("../../assets/leftQuote.png");
 const rightQuote = require("../../assets/rightQuote.png");
@@ -13,22 +23,19 @@ const opinion = [
   "It was great to work with Martin. I will work with him again for sure in the near future. He communicates well and makes himself available to answer questions and helps above and beyond what is expected of him.",
 ];
 
-const Contact = ({
-  myPortfolio,
-  myService,
-  myAwards,
-  myProjecty,
-  myContacty,
-}) => {
+const Contact: FC = () => {
+  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
+    useContext(SlideContext);
   const myFootNav = [
     { link: myPortfolio, title: "Porfolio" },
     { link: myService, title: "Service" },
     { link: myAwards, title: "Awards" },
     { link: myProjecty, title: "Technology" },
   ];
+
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
-
+  const { show, setShow } = useContext(SlideContext);
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -74,7 +81,7 @@ const Contact = ({
           ))}
         </div>
       </div>
-      <div className="contact">
+      <div className="contact" onClick={() => setShow(false)}>
         <p className="contact__btn">
           Contact me
           <img className="contact__cliker" src={rightPointer} alt="pointer" />

@@ -1,17 +1,14 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useContext } from "react";
 import { TypeProps } from "../../types";
 import NavItem from "../../component/navitem";
 import Ini from "../../component/initialsMF";
+import { SlideContext } from "../../context/Contexts";
 const imgTextRight = require("../../assets/text_left.png");
 const dropDown = require("../../assets/dropdown.png");
 
-const Menupart: FC<TypeProps> = ({
-  myPortfolio,
-  myService,
-  myAwards,
-  myProjecty,
-  myContacty,
-}) => {
+const Menupart: FC = () => {
+  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
+    useContext(SlideContext);
   const navMenu = [
     { name: "My Portfolio", linker: myPortfolio },
     { name: "Service", linker: myService },

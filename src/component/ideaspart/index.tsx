@@ -1,11 +1,9 @@
-import React, { FC, RefObject } from "react";
+import React, { FC, RefObject, useContext } from "react";
+import { SlideContext } from "../../context/Contexts";
 import { TypeProps } from "../../types";
-const Ideaspart: FC<TypeProps> = ({
-  myPortfolio,
-  myService,
-  myAwards,
-  myProjecty,
-}) => {
+const Ideaspart: FC = () => {
+  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
+    useContext(SlideContext);
   const myServices: Array<string> = [
     "UX/UI",
     "Websites",

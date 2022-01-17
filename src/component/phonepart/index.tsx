@@ -3,7 +3,7 @@ import { TypeProps } from "../../types";
 import Slider from "../../component/Slider/Slider";
 import { SlideContext } from "../../context/Contexts";
 import dataSlider from "../Slider/dataSlider";
-const Phonepart: FC<TypeProps> = () => {
+const Phonepart: FC = () => {
   const { slideProject, setSlideproject } = useContext(SlideContext);
   return (
     <React.Fragment>

@@ -1,22 +1,27 @@
-import React, { createContext } from "react";
-type ContextState = {
-	slideProject: number;
-	expander: string;
-	setSlideproject: (slideProject) => void;
-	setExpander: (expander) => void;
+import React, { createContext, RefObject } from "react";
+type SlideContextTypes = {
+  slideProject: number;
+  expander: string;
+  show: boolean;
+  setSlideproject: (slideProject) => void;
+  setExpander: (expander) => void;
+  setShow: (show) => void;
+  myPortfolio: RefObject<HTMLDivElement> | null;
+  myService: RefObject<HTMLDivElement> | null;
+  myAwards: RefObject<HTMLDivElement> | null;
+  myProjecty: RefObject<HTMLDivElement> | null;
+  myContacty: RefObject<HTMLDivElement> | null;
 };
-export const SlideContext = createContext<ContextState>({
-	slideProject: 1,
-	expander: "",
-	setSlideproject: () => {},
-	setExpander: () => {},
-});
-
-type ModalState = {
-	modalOpen: boolean;
-	setModalOpen: (modalOpen) => void;
-};
-export const ModalContext = createContext<ModalState>({
-	modalOpen: false,
-	setModalOpen: () => {},
+export const SlideContext = createContext<SlideContextTypes>({
+  slideProject: 1,
+  expander: "",
+  show: false,
+  setSlideproject: () => {},
+  setExpander: () => {},
+  setShow: () => {},
+  myPortfolio: React.createRef(),
+  myService: React.createRef(),
+  myAwards: React.createRef(),
+  myProjecty: React.createRef(),
+  myContacty: React.createRef(),
 });

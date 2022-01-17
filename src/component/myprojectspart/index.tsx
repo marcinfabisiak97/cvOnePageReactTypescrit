@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { FC, useState, useContext } from "react";
+import { TypeProps } from "../../types";
 import dataSlider from "../Slider/dataSlider";
 import Modal from "../myprojectspart/modal";
 import Modal1 from "../myprojectspart/modal1";
+import { SlideContext } from "../../context/Contexts";
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const myProjects = [
   { source: dataSlider[0].adres, descr: "See more", setOpen: 1 },
@@ -34,33 +36,50 @@ const Project = (props) => {
     </div>
   );
 };
-const Projectspart = ({ myPortfolio, myService, myAwards, myProjecty }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-
+const Projectspart: FC = () => {
+  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
+    useContext(SlideContext);
+  const [allModalOpen, setAllModalOpen] = useState(false);
   return (
     <div className="projects" ref={myProjecty}>
       <div className="projects__title">My projects</div>
-      <div className="projects__btnSee">
-        <h3 className="projects__description">See all projects</h3>
-        <img
-          src={rightPointer}
-          className="projects__image"
-          alt="rightPointer"
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        />
-      </div>
-      {myProjects.map((el, index) => {
-        return (
-          <Project
-            key={index}
-            source={el.source}
-            descr={el.descr}
-            setOpen={el.setOpen}
+      {allModalOpen ? (
+        <div className="projects__btnSee">
+          <h3 className="projects__description">Close all projects</h3>
+          <img
+            src={rightPointer}
+            className="projects__image"
+            alt="rightPointer"
+            onClick={() => {
+              setAllModalOpen(false);
+            }}
           />
-        );
-      })}
+        </div>
+      ) : (
+        <div className="projects__btnSee">
+          <h3 className="projects__description">See all projects</h3>
+          <img
+            src={rightPointer}
+            className="projects__image"
+            alt="rightPointer"
+            onClick={() => {
+              setAllModalOpen(true);
+            }}
+          />
+        </div>
+      )}
+
+      {allModalOpen &&
+        myProjects.map((el, index) => {
+          return (
+            <Project
+              key={index}
+              source={el.source}
+              descr={el.descr}
+              setOpen={el.setOpen}
+            />
+          );
+        })}
     </div>
   );
 };

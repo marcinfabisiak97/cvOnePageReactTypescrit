@@ -33,11 +33,11 @@ const Phonepart: FC = () => {
         <div className="phonePart__vertiSlider">
           <div
             className="phonePart__arrow phonePart__arrow--up"
-            onClick={() => setSlideproject(slideProject - 1)}
+            onClick={() => setSlideproject(1)}
           ></div>
           <div
             className="phonePart__arrow phonePart__arrow--down"
-            onClick={() => setSlideproject(slideProject + 1)}
+            onClick={() => setSlideproject(2)}
           ></div>
         </div>
       </div>

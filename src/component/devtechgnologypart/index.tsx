@@ -29,7 +29,6 @@ const Devtech = () => {
     (devtechshow: RootState) => devtechshow.devtech
   );
   const dispatch = useDispatch();
-
   const { show, hide } = bindActionCreators(actionCreators, dispatch);
   return (
     <div className="devTech">

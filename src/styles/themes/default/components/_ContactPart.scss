@@ -71,6 +71,7 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  cursor: pointer;
   &__initials {
     h2 {
       font-size: $f-xxmiddle;
@@ -88,6 +89,12 @@
       font-size: $f-xsmall;
       margin: $space-xxxsmall;
       font-weight: 900;
+    }
+  }
+  &__terms {
+    a {
+      color: white;
+      text-decoration: none;
     }
   }
   &__links {

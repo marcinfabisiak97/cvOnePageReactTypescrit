@@ -54,7 +54,6 @@
     }
 
     button:focus + ul {
-      opacity: 1;
       pointer-events: all;
     }
 
@@ -65,7 +64,6 @@
 
       cursor: pointer;
       position: absolute;
-      opacity: 0;
       list-style: none;
 
       transition: all 0.4s ease;

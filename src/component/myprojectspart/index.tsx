@@ -44,27 +44,31 @@ const Projectspart: FC = () => {
     <div className="projects" ref={myProjecty}>
       <div className="projects__title">My projects</div>
       {allModalOpen ? (
-        <div className="projects__btnSee">
+        <div
+          className="projects__btnSee"
+          onClick={() => {
+            setAllModalOpen(false);
+          }}
+        >
           <h3 className="projects__description">Close all projects</h3>
           <img
             src={rightPointer}
             className="projects__image"
             alt="rightPointer"
-            onClick={() => {
-              setAllModalOpen(false);
-            }}
           />
         </div>
       ) : (
-        <div className="projects__btnSee">
+        <div
+          className="projects__btnSee"
+          onClick={() => {
+            setAllModalOpen(true);
+          }}
+        >
           <h3 className="projects__description">See all projects</h3>
           <img
             src={rightPointer}
             className="projects__image"
             alt="rightPointer"
-            onClick={() => {
-              setAllModalOpen(true);
-            }}
           />
         </div>
       )}

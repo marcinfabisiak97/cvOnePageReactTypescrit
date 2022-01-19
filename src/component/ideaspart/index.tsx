@@ -4,11 +4,11 @@ import { TypeProps } from "../../types";
 const Ideaspart: FC = () => {
   const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
     useContext(SlideContext);
-  const myServices: Array<string> = [
-    "UX/UI",
-    "Websites",
-    "Applications",
-    "Software",
+  const myServices = [
+    { name: "UX/UI", link: "https://project1onepagecv.netlify.app/" },
+    { name: "Websites", link: "https://project1onepagecv.netlify.app/" },
+    { name: "Applications", link: "https://project2quizreact.netlify.app" },
+    { name: "Software", link: "https://project1onepagecv.netlify.app/" },
   ];
   return (
     <React.Fragment>
@@ -20,7 +20,11 @@ const Ideaspart: FC = () => {
         <p className="ideasPart__text">to make your ideas evolve</p>
         <div className="ideasPart__downBoxes">
           {myServices.map((el, index) => (
-            <div key={index}>{el}</div>
+            <div key={index}>
+              <a href={el.link} target="_blank">
+                {el.name}
+              </a>
+            </div>
           ))}
         </div>
       </div>

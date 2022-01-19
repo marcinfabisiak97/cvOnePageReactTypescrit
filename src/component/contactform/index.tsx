@@ -57,13 +57,14 @@ const ContactUsForm = () => {
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
+          className="form__date"
         />
         <label>Gender Selection</label>
         <select {...register("gender", { required: true })}>
           <option value="female">female</option>
           <option value="male">male</option>
         </select>
-        <input className="form__submit" type="submit" />
+        <input className="form__submit" type="submit" value="Send" />
       </form>
     </div>
   );

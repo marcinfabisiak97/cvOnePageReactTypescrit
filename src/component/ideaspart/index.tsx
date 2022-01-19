@@ -7,7 +7,7 @@ const Ideaspart: FC = () => {
   const myServices = [
     { name: "UX/UI", link: "https://project1onepagecv.netlify.app/" },
     { name: "Websites", link: "https://project1onepagecv.netlify.app/" },
-    { name: "Applications", link: "https://project1onepagecv.netlify.app/" },
+    { name: "Applications", link: "https://project2quizreact.netlify.app" },
     { name: "Software", link: "https://project1onepagecv.netlify.app/" },
   ];
   return (

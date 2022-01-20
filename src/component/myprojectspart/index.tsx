@@ -22,7 +22,7 @@ const myProjects = [
     setOpen: 2,
     titledescr: "Multipage Quiz site",
     descr:
-      "This project have multi pages, which can be navigate through using router. For managing state I use useContext Hook.",
+      "This project has multi pages, which can be navigate through using router. For managing state I use useContext Hook.",
   },
 ];
 const Project = (props) => {

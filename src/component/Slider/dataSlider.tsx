@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
-const portfolio_case_01 = require("../../assets/portfolio_case_01.png");
-const portfolio_case_02 = require("../../assets/portfolio_case_02.png");
-const portfolio_case_03 = require("../../assets/portfolio_case_03.png");
-const portfolio_case_04 = require("../../assets/portfolio_case_04.png");
-const portfolio_case_05 = require("../../assets/portfolio_case_05.png");
+const portfolio_case_01 = require("../../assets/proj2/page1.png");
+const portfolio_case_02 = require("../../assets/proj2/page2.png");
+const portfolio_case_03 = require("../../assets/proj2/page3.png");
+const portfolio_case_04 = require("../../assets/proj2/page4.png");
+const portfolio_case_05 = require("../../assets/proj2/page5.png");
 
 const img1 = require("../../assets/Imgs/img1.jpg");
 const img2 = require("../../assets/Imgs/img2.jpg");

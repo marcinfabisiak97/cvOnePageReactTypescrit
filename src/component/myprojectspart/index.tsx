@@ -4,10 +4,26 @@ import dataSlider from "../Slider/dataSlider";
 import Modal from "../myprojectspart/modal";
 import Modal1 from "../myprojectspart/modal1";
 import { SlideContext } from "../../context/Contexts";
+const pr1 = require("../../assets/pr1.png");
+const pr2 = require("../../assets/pr2.png");
 const rightPointer = require("../../assets/icons/rightPointer.png");
 const myProjects = [
-  { source: dataSlider[0].adres, descr: "See more", setOpen: 1 },
-  { source: dataSlider[1].adres, descr: "See more", setOpen: 2 },
+  {
+    source: pr1,
+    btndescr: "See more",
+    setOpen: 1,
+    titledescr: "One Page Portfolio site",
+    descr:
+      "This project is made in react, for styling I used SCSS. If You wolud like to know more I am open to tell You more",
+  },
+  {
+    source: pr2,
+    btndescr: "See more",
+    setOpen: 2,
+    titledescr: "Multipage Quiz site",
+    descr:
+      "This project have multi pages, which can be navigate through using router. For managing state I use useContext Hook.",
+  },
 ];
 const Project = (props) => {
   const [modalOpen, setModalOpen] = useState(0);
@@ -19,16 +35,22 @@ const Project = (props) => {
           <img src={props.source} />
         </div>
       </div>
-      <div className="projects__btnSee">
-        <h3 className="projects__description">{props.descr}</h3>
+      <div className="projects__descr">
+        <h3>{props.titledescr}</h3>
+        <p>{props.descr}</p>
+      </div>
+      <div
+        className="projects__btnSee"
+        onClick={() => {
+          setModalOpen(props.setOpen);
+          setModalOpen1(props.setOpen);
+        }}
+      >
+        <h3 className="projects__btndescription">{props.btndescr}</h3>
         <img
           src={rightPointer}
           className="projects__image"
           alt="rightPointer"
-          onClick={() => {
-            setModalOpen(props.setOpen);
-            setModalOpen1(props.setOpen);
-          }}
         />
       </div>
       {modalOpen == 1 && <Modal setOpenModal={setModalOpen} />}
@@ -50,7 +72,7 @@ const Projectspart: FC = () => {
             setAllModalOpen(false);
           }}
         >
-          <h3 className="projects__description">Close all projects</h3>
+          <h3 className="projects__btndescription">Close all projects</h3>
           <img
             src={rightPointer}
             className="projects__image"
@@ -79,6 +101,8 @@ const Projectspart: FC = () => {
             <Project
               key={index}
               source={el.source}
+              btndescr={el.btndescr}
+              titledescr={el.titledescr}
               descr={el.descr}
               setOpen={el.setOpen}
             />

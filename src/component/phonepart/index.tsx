@@ -30,15 +30,19 @@ const Phonepart: FC = () => {
             leo nec consectetur.
           </p>
         </div>
-        <div className="phonePart__vertiSlider">
+        <div className="phonePart__vertContainer">
           <div
-            className="phonePart__arrow phonePart__arrow--up"
+            className="phonePart__vertiSlider phonePart__vertiSlider--btnUp"
             onClick={() => setSlideproject(1)}
-          ></div>
+          >
+            <div className="phonePart__arrow phonePart__arrow--up"></div>
+          </div>
           <div
-            className="phonePart__arrow phonePart__arrow--down"
+            className="phonePart__vertiSlider phonePart__vertiSlider--btnDown"
             onClick={() => setSlideproject(2)}
-          ></div>
+          >
+            <div className="phonePart__arrow phonePart__arrow--down"></div>
+          </div>
         </div>
       </div>
     </React.Fragment>

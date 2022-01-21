@@ -42,22 +42,23 @@ const Devtech = () => {
       <p className="devTech__description">
         We can prognose the results and test efficancy of the methods used.
       </p>
-      <button onClick={() => show()}>show</button>
-
+      {!devtechshow && <button onClick={() => show()}>show</button>}
       {devtechshow && (
-        <div className="techBricks">
-          {myDevTechs.map((el, index) => {
-            return (
-              <div>
-                <div className="techBricks__brick">
-                  <img src={el.source} className="techBricks__brick--image" />
+        <React.Fragment>
+          <div className="techBricks">
+            {myDevTechs.map((el, index) => {
+              return (
+                <div>
+                  <div className="techBricks__brick">
+                    <img src={el.source} className="techBricks__brick--image" />
+                  </div>
+                  <p className="techBricks__title">{el.title}</p>
                 </div>
-                <p className="techBricks__title">{el.title}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
           <button onClick={() => hide()}>hide</button>
-        </div>
+        </React.Fragment>
       )}
     </div>
   );

@@ -8,6 +8,7 @@ function App() {
   const [expander, setExpander] = useState("");
   const [slideProject, setSlideproject] = useState(1);
   const [show, setShow] = useState(true);
+  const [menu, setOpenMenu] = useState(false);
   const myPortfolio = useRef<HTMLDivElement>(null);
   const myService = useRef<HTMLDivElement>(null);
   const myAwards = useRef<HTMLDivElement>(null);
@@ -27,6 +28,8 @@ function App() {
         myAwards,
         myProjecty,
         myContacty,
+        menu,
+        setOpenMenu,
       }}
     >
       <Routes>

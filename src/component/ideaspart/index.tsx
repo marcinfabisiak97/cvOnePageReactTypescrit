@@ -2,14 +2,16 @@ import React, { FC, RefObject, useContext } from "react";
 import { SlideContext } from "../../context/Contexts";
 import { TypeProps } from "../../types";
 const Ideaspart: FC = () => {
-  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
-    useContext(SlideContext);
-  const myServices = [
-    { name: "UX/UI", link: "https://project1onepagecv.netlify.app/" },
-    { name: "Websites", link: "https://project1onepagecv.netlify.app/" },
-    { name: "Applications", link: "https://project2quizreact.netlify.app" },
-    { name: "Software", link: "https://project1onepagecv.netlify.app/" },
-  ];
+  const {
+    myPortfolio,
+    myService,
+    myAwards,
+    myProjecty,
+    myContacty,
+    setSlideproject,
+  } = useContext(SlideContext);
+
+  const myServices = [{ name: "Websites" }, { name: "Applications" }];
   return (
     <React.Fragment>
       <div className="ideasPart" ref={myService}>
@@ -20,10 +22,8 @@ const Ideaspart: FC = () => {
         <p className="ideasPart__text">to make your ideas evolve</p>
         <div className="ideasPart__downBoxes">
           {myServices.map((el, index) => (
-            <div key={index}>
-              <a href={el.link} target="_blank">
-                {el.name}
-              </a>
+            <div onClick={() => setSlideproject(index + 1)} key={index}>
+              {el.name}
             </div>
           ))}
         </div>

@@ -7,8 +7,15 @@ const imgTextRight = require("../../assets/text_left.png");
 const dropDown = require("../../assets/dropdown.png");
 
 const Menupart: FC = () => {
-  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
-    useContext(SlideContext);
+  const {
+    myPortfolio,
+    myService,
+    myAwards,
+    myProjecty,
+    myContacty,
+    menu,
+    setOpenMenu,
+  } = useContext(SlideContext);
   const navMenu = [
     { name: "My Portfolio", linker: myPortfolio },
     { name: "Service", linker: myService },
@@ -46,19 +53,21 @@ const Menupart: FC = () => {
                 : "namenMenu__menu"
             }
           >
-            <button>
+            <button onClick={() => setOpenMenu(!menu)}>
               Menu
               <span className="namenMenu__menu--buttonImgWrapper">
                 <img src={dropDown} alt="dropdown arrow" />
               </span>
             </button>
-            <ul>
-              {navMenu.map((el, index) => {
-                return (
-                  <NavItem key={index} name={el.name} linker={el.linker} />
-                );
-              })}
-            </ul>
+            {menu && (
+              <ul>
+                {navMenu.map((el, index) => {
+                  return (
+                    <NavItem key={index} name={el.name} linker={el.linker} />
+                  );
+                })}
+              </ul>
+            )}
           </div>
         </div>
         <div className="imagePart__imgRight">

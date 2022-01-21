@@ -3,6 +3,8 @@ type SlideContextTypes = {
   slideProject: number;
   expander: string;
   show: boolean;
+  menu: boolean;
+  setOpenMenu: (menu) => void;
   setSlideproject: (slideProject) => void;
   setExpander: (expander) => void;
   setShow: (show) => void;
@@ -16,6 +18,8 @@ export const SlideContext = createContext<SlideContextTypes>({
   slideProject: 1,
   expander: "",
   show: false,
+  menu: false,
+  setOpenMenu: () => {},
   setSlideproject: () => {},
   setExpander: () => {},
   setShow: () => {},

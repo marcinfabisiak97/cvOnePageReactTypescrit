@@ -8,7 +8,10 @@ const Technolgie = (props) => {
   return (
     <React.Fragment>
       {expander ? (
-        <div className="technologiesBricks technologiesBricks--expand">
+        <div
+          className="technologiesBricks technologiesBricks--expand"
+          onClick={() => setExpander("")}
+        >
           <img src={props.photo} alt="ui" />
           <div className="technologiesBricks__midleText">
             <p>{props.number}</p>
@@ -17,13 +20,15 @@ const Technolgie = (props) => {
           </div>
           <img
             className="technologiesBricks__cliker technologiesBricks__cliker--rotate"
-            onClick={() => setExpander("")}
             src={rightPointer}
             alt="pointer"
           />
         </div>
       ) : (
-        <div className="technologiesBricks">
+        <div
+          className="technologiesBricks"
+          onClick={() => setExpander(props.number)}
+        >
           <img src={props.photo} alt="ui" />
           <div className="technologiesBricks__midleText">
             <p>{props.number}</p>
@@ -32,7 +37,6 @@ const Technolgie = (props) => {
           </div>
           <img
             className="technologiesBricks__cliker"
-            onClick={() => setExpander(props.number)}
             src={rightPointer}
             alt="pointer"
           />

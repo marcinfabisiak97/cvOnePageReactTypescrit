@@ -15,7 +15,7 @@ const Phonepart: FC = () => {
           <h2>Between Projects</h2>
           <h3>Slider</h3>
           <h4>
-            At the picture you can see the projects that was created by using
+            In the picture you can see the projects that was created by using
             react framework. In the second project I used hooks like useContex
             to mange the state.
           </h4>

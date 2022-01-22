@@ -12,22 +12,21 @@ const Phonepart: FC = () => {
           <Slider />
         </div>
         <div className="phonePart__description">
-          <h2>Description</h2>
-          <h3>Tite</h3>
+          <h2>Between Projects</h2>
+          <h3>Slider</h3>
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a
-            libero id tortor condimentum efficitur at eu massa. Sed sagittis sed
-            leo nec consectetur.
+            At the picture you can see the projects that was created by using
+            react framework. In the second project I used hooks like useContex
+            to mange the state.
           </h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a
-            libero id tortor condimentum efficitur at eu massa. Sed sagittis sed
-            leo nec consectetur.
+            There tree ways to change kind of project. On the right there is a
+            two way Slider. You can change the project by using left dots and
+            also by picking the upper text.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a
-            libero id tortor condimentum efficitur at eu massa. Sed sagittis sed
-            leo nec consectetur.
+            When You are in one of the project You can pic it by click on the
+            arrows, which are one the bottom of phone image.
           </p>
         </div>
         <div className="phonePart__vertContainer">

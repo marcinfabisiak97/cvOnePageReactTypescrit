@@ -86,7 +86,7 @@ const Projectspart: FC = () => {
             setAllModalOpen(true);
           }}
         >
-          <h3 className="projects__description">See all projects</h3>
+          <h3 className="projects__btndescription">See all projects</h3>
           <img
             src={rightPointer}
             className="projects__image"

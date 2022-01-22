@@ -58,3 +58,31 @@
     }
   }
 }
+@media only screen and (max-width: 769px) {
+  .phonePart {
+    display: flex;
+    flex-direction: column;
+    &__description {
+      text-align: center;
+      max-width: 80%;
+    }
+    &__vertiSlider {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 426px) {
+  .phonePart {
+    min-width: 123vw;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .phonePart {
+    min-width: 140vw;
+  }
+}
+@media only screen and (max-width: 321px) {
+  .phonePart {
+    min-width: 165vw;
+  }
+}

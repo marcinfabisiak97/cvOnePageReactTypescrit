@@ -51,3 +51,37 @@
     }
   }
 }
+@media only screen and (max-width: 769px) {
+  .projects {
+    &__btnSee {
+      width: 30%;
+    }
+    &__btndescription {
+      padding: 3%;
+    }
+    &__descr {
+      text-align: center;
+      h3 {
+        font-size: $f-middle;
+      }
+      p {
+        font-size: $f-xsmall;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 426px) {
+  .projects {
+    min-width: 123vw;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .projects {
+    min-width: 140vw;
+  }
+}
+@media only screen and (max-width: 321px) {
+  .projects {
+    min-width: 165vw;
+  }
+}

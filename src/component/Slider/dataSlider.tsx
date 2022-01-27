@@ -5,11 +5,11 @@ const portfolio_case_03 = require("../../assets/proj2/page3.png");
 const portfolio_case_04 = require("../../assets/proj2/page4.png");
 const portfolio_case_05 = require("../../assets/proj2/page5.png");
 
-const img1 = require("../../assets/Imgs/img1.jpg");
-const img2 = require("../../assets/Imgs/img2.jpg");
-const img3 = require("../../assets/Imgs/img3.jpg");
-const img4 = require("../../assets/Imgs/img4.jpg");
-const img5 = require("../../assets/Imgs/img5.jpg");
+const img1 = require("../../assets/proj1/img1.png");
+const img2 = require("../../assets/proj1/img2.png");
+const img3 = require("../../assets/proj1/img3.png");
+const img4 = require("../../assets/proj1/img4.png");
+const img5 = require("../../assets/proj1/img5.png");
 const dataSlider = [
   {
     id: uuidv4(),

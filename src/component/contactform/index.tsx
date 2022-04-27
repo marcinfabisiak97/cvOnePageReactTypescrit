@@ -28,7 +28,6 @@ const ContactUsForm = () => {
   const [startDate, setStartDate] = useState(new Date());
   return (
     <div className="containerForm">
-      <button onClick={() => setShow(true)}>X</button>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <label>First Name</label>
         <input
@@ -65,6 +64,7 @@ const ContactUsForm = () => {
           <option value="male">male</option>
         </select>
         <input className="form__submit" type="submit" value="Send" />
+        <button onClick={() => setShow(true)}>close</button>
       </form>
     </div>
   );

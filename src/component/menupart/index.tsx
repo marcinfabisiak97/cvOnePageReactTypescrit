@@ -15,6 +15,8 @@ const Menupart: FC = () => {
     myContacty,
     menu,
     setOpenMenu,
+    scrolled,
+    setScrolled,
   } = useContext(SlideContext);
   const navMenu = [
     { name: "My Portfolio", linker: myPortfolio },
@@ -23,8 +25,6 @@ const Menupart: FC = () => {
     { name: "Technology", linker: myProjecty },
     { name: "Contact me", linker: myContacty },
   ];
-
-  const [scrolled, setScrolled] = useState(false);
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 350) {

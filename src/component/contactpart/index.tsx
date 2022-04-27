@@ -24,8 +24,14 @@ const opinion = [
 ];
 
 const Contact: FC = () => {
-  const { myPortfolio, myService, myAwards, myProjecty, myContacty } =
-    useContext(SlideContext);
+  const {
+    myPortfolio,
+    myService,
+    myAwards,
+    myProjecty,
+    myContacty,
+    setScrolled,
+  } = useContext(SlideContext);
   const myFootNav = [
     { link: myPortfolio, title: "Porfolio" },
     { link: myService, title: "Service" },
@@ -35,7 +41,7 @@ const Contact: FC = () => {
 
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
-  const { show, setShow } = useContext(SlideContext);
+  const { show, setShow, setOpenMenu } = useContext(SlideContext);
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -81,7 +87,14 @@ const Contact: FC = () => {
           ))}
         </div>
       </div>
-      <div className="contact" onClick={() => setShow(false)}>
+      <div
+        className="contact"
+        onClick={() => {
+          setShow(false);
+          setOpenMenu(false);
+          setScrolled(false);
+        }}
+      >
         <p className="contact__btn">
           Contact me
           <img className="contact__cliker" src={rightPointer} alt="pointer" />
@@ -96,7 +109,11 @@ const Contact: FC = () => {
         </div>
         <div className="footer__nav">
           {myFootNav.map((el, index) => {
-            return <p onClick={() => scrollToRef(el.link)}>{el.title}</p>;
+            return (
+              <p key={index} onClick={() => scrollToRef(el.link)}>
+                {el.title}
+              </p>
+            );
           })}
         </div>
         <div className="footer__terms">
@@ -107,7 +124,6 @@ const Contact: FC = () => {
           >
             <p>Privacy</p>
           </a>
-
           <p>Terms & Condtions</p>
         </div>
 
